@@ -10,6 +10,11 @@ export const getAllCharacters = () => {
     .then(response => response.json())
 }
 
+export const getCharactersByUser = (userId) => {
+    return fetch(`${remoteURL}/characters?userId=${userId}&_expand=user`)
+    .then(response => response.json())
+}
+
 export const addCharacter = (newCharacter) => {
     return fetch(`${remoteURL}/characters`, {
         method: "POST",
