@@ -1,29 +1,30 @@
 import React, {useState, useEffect} from "react";
 import {useHistory} from "react-router-dom";
 import {CharacterCard} from "./CharacterCard";
-import {updateCharacter, getCharactersByUser, deleteCharacter, getAllCharacters} from "../../modules/CharacterModule"
+import {updateCharacter, deleteCharacter, getCharactersByUser} from "../../modules/CharacterModule"
 
 export const CharacterList = () => {
-
-    currentUser = JSON.parse(sessionStorage.getItem("bagOfTricks_user"))
+//We're getting the current user stored in session storage. Check current user in session storage in application in dev tools
+    const currentUser = JSON.parse(sessionStorage.getItem("app_user_id"))
+    debugger
 
     const history = useHistory()
 
     const [characters, setCharacters] = useState([]);
 
     const getCharacters = () => {
-        return getAllCharacters().then(charactersFromAPI => {
+        return getCharactersByUser(currentUser).then(charactersFromAPI => {
             setCharacters(charactersFromAPI)
         })
     }
 
     const handleDeleteCharacter = id => {
         deleteCharacter(id)
-        .then(() => getAllCharacters().then(setCharacters))
+        .then(() => getCharacters())
     }
 
     useEffect(() => {
-        getCharacters()
+        getCharacters(currentUser)
     }, [])
 
     return (

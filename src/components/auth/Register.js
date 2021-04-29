@@ -1,9 +1,9 @@
 import React, { useState } from "react"
-import { useHistory } from "react-router-dom"
+import { useHistory, Link } from "react-router-dom"
 import { authApi, userStorageKey } from "./authSettings"
 import "./Login.css"
 
-export const Register = () => {
+export const Register = (setAuthUser) => {
 
     const [registerUser, setRegisterUser] = useState({ firstName: "", lastName: "", email: "" })
     const [conflictDialog, setConflictDialog] = useState(false)
@@ -43,6 +43,7 @@ export const Register = () => {
                         .then(createdUser => {
                             if (createdUser.hasOwnProperty("id")) {
                                 sessionStorage.setItem(userStorageKey, createdUser.id)
+                                setAuthUser(createdUser)
                                 history.push("/")
                             }
                         })
@@ -78,6 +79,11 @@ export const Register = () => {
                 </fieldset>
                 <fieldset>
                     <button type="submit"> Sign in </button>
+                </fieldset>
+                <fieldset>
+                <Link to={`/login/`}>
+                <button className="btn-primary">Return</button>
+            </Link>
                 </fieldset>
             </form>
         </main>

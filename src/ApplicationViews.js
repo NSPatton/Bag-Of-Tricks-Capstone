@@ -1,12 +1,26 @@
-import React from "react";
-import {Route} from "react-router-dom";
+import React, {useState} from "react";
+import {Route, Redirect} from "react-router-dom";
+import {Login} from "./components/auth/Login"
+import {Register} from "./components/auth/Register"
+import {CharacterList} from "./components/characters/CharacterList"
 
-export const ApplicationViews = () => {
+
+
+export const ApplicationViews = ({setAuthUser, isAuthenticated}) => {
+    
+  
+
     return (
         <>
         <Route exact path="/">
-            <CharacterList />
+            <CharacterList /> 
         </Route>
+        <Route exact path="/login">
+            <Login setAuthUser={setAuthUser} />
+            </Route>
+            <Route exact path="/register">
+                <Register setAuthUser={setAuthUser} />
+            </Route>
         </>
     )
 }
