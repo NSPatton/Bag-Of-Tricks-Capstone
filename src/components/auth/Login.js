@@ -4,7 +4,7 @@ import { authApi, userStorageKey } from "./authSettings"
 import "./Login.css"
 
 
-export const Login = () => {
+export const Login = (setAuthUser) => {
     const [loginUser, setLoginUser] = useState({ email: "" })
     const [existDialog, setExistDialog] = useState(false)
 
@@ -45,7 +45,7 @@ export const Login = () => {
             </dialog>
             <section>
                 <form className="form--login" onSubmit={handleLogin}>
-                    <h1>Nutshell</h1>
+                    <h1>Bag Of Tricks</h1>
                     <h2>Please sign in</h2>
                     <fieldset>
                         <label htmlFor="inputEmail"> Email address </label>

@@ -1,16 +1,13 @@
 import React from "react"
-import {Link} from "react-router-dom"
-import "bootstrap/dist/css/bootstrap.min.css"
+import { Link } from "react-router-dom"
+import "./NavBar.css"
 
-export const NavBar = (props) => {
+export const NavBar = () => {
     return (
-        <nav className="navbar bg-dark text-white flex-md-nowrap p-0 shadow">
-
-            <ul className="nav nav-pills nav-fill">
-                <li className="nav-item">
-                    <Link className="nav-link" to="/">My Characters</Link>
-                </li>
-            </ul>
-        </nav>
+        <ul className="navbar">
+            <li className="navbar__item active">
+                <Link className="navbar__link" to="/">My Characters</Link>
+            </li>
+        </ul>
     )
 }
