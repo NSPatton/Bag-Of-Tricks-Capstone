@@ -6,8 +6,7 @@ import {updateCharacter, deleteCharacter, getCharactersByUser} from "../../modul
 export const CharacterList = () => {
 //We're getting the current user stored in session storage. Check current user in session storage in application in dev tools
     const currentUser = JSON.parse(sessionStorage.getItem("app_user_id"))
-    debugger
-
+    
     const history = useHistory()
 
     const [characters, setCharacters] = useState([]);

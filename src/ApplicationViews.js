@@ -7,9 +7,6 @@ import {CharacterList} from "./components/characters/CharacterList"
 
 
 export const ApplicationViews = ({setAuthUser, isAuthenticated}) => {
-    
-  
-
     return (
         <>
         <Route exact path="/">
