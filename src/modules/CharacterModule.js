@@ -11,7 +11,7 @@ export const getAllCharacters = () => {
 }
 //We're getting all the characters of a specific user. I had a lowercase i in my database so this didnt activate.
 export const getCharactersByUser = (userId) => {
-    return fetch(`${remoteURL}/characters?userId=${userId}&_expand=user`)
+    return fetch(`${remoteURL}/characters?userId=${userId}&_expand=user&_expand=class`)
     .then(response => response.json())
 }
 

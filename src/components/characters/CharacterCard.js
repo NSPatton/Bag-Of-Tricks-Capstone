@@ -10,7 +10,7 @@ export const CharacterCard = ({character, handleDeleteCharacter}) => {
                         <div className="character">
                         <h3>Character Name: {character.name}</h3>
                         <p>Level: {character.level}</p>
-                        <p>Class: {character.class}</p>
+                        <p>Class: {character.class.name}</p>
                         <p>Campaign: {character.campaign}</p>
                     </div>
                 </div>

@@ -8,11 +8,11 @@ import {Register} from "./components/auth/Register"
 //if the user is authenticated, render the navbar and application views
 //if not, direct them to login/register
 export const BagOfTricks = () => {
-    const [isAuthenticated, setIsAuthenticated] = useState(sessionStorage.getItem("bagOfTricks_user") !== null)
+    const [isAuthenticated, setIsAuthenticated] = useState(sessionStorage.getItem("app_user_id") !== null)
     
     const setAuthUser = (user) => {
-        sessionStorage.setItem("bagOfTricks_user", JSON.stringify(user))
-        setIsAuthenticated(sessionStorage.getItem("bagOfTricks_user") !== null)
+        sessionStorage.setItem("app_user_id", JSON.stringify(user.id))
+        setIsAuthenticated(sessionStorage.getItem("app_user_id") !== null)
     }
     return (
         <>
