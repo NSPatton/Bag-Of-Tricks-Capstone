@@ -4,7 +4,7 @@ import { authApi, userStorageKey } from "./authSettings"
 import "./Login.css"
 
 
-export const Login = (setAuthUser) => {
+export const Login = ({setAuthUser}) => {
     const [loginUser, setLoginUser] = useState({ email: "" })
     const [existDialog, setExistDialog] = useState(false)
 
@@ -30,6 +30,7 @@ export const Login = (setAuthUser) => {
             .then(exists => {
                 if (exists) {
                     sessionStorage.setItem(userStorageKey, exists.id)
+                    setAuthUser(exists)
                     history.push("/")
                 } else {
                     setExistDialog(true)

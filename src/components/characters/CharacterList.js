@@ -11,7 +11,7 @@ export const CharacterList = () => {
 
     const [characters, setCharacters] = useState([]);
 
-    const getCharacters = () => {
+    const getCharacters = (currentUser) => {
         return getCharactersByUser(currentUser).then(charactersFromAPI => {
             setCharacters(charactersFromAPI)
         })
@@ -24,7 +24,7 @@ export const CharacterList = () => {
 
     useEffect(() => {
         getCharacters(currentUser)
-    }, [])
+    }, [currentUser])
 
     return (
         <>
