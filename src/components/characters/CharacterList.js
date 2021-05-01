@@ -31,7 +31,7 @@ export const CharacterList = () => {
         <section className="section-content">
             <button type="button"
             className="btn-primary"
-            onClick={() => {history.push("/tasks/create") }}>
+            onClick={() => {history.push("/characters/create") }}>
                 Add A Character
             </button>
         </section>
