@@ -4,15 +4,22 @@ import {Login} from "./components/auth/Login"
 import {Register} from "./components/auth/Register"
 import {CharacterList} from "./components/characters/CharacterList"
 import {CharacterCard} from "./components/characters/CharacterCard"
+import {CharacterForm} from "./components/characters/CharacterForm"
+import {NavBar} from "./components/nav/NavBar"
 
 
 export const ApplicationViews = ({setAuthUser, isAuthenticated}) => {
     return (
         <>
         <Route exact path="/">
-            {/* {isAuthenticated ? */}
-             <CharacterList />
-              {/* : <Redirect to="/login" />} */}
+            {isAuthenticated ?
+            <><NavBar />
+             <CharacterList /> </>
+             : <Redirect to="/login" />} 
+        </Route>
+        <Route exact path="/characters/create">
+        <NavBar />
+            <CharacterForm />
         </Route>
         <Route exact path="/login">
             <Login setAuthUser={setAuthUser} />
