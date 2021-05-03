@@ -12,6 +12,7 @@ export const CharacterCard = ({character, handleDeleteCharacter}) => {
                         <p>Level: {character.level}</p>
                         <p>Class: {character.class.name}</p>
                         <p>Campaign: {character.campaign}</p>
+                        <button className="btn-primary" type="button" onClick={() => handleDeleteCharacter(character.id)}>Delete</button>
                     </div>
                 </div>
             </div>

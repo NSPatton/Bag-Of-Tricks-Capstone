@@ -1,16 +1,20 @@
 import React, {useState, useEffect} from 'react'
 import {useHistory} from 'react-router'
+import {Link} from "react-router-dom"
 import {addCharacter, getAllCharacters} from '../../modules/CharacterModule'
 import {getAllClasses} from "../../modules/ClassModule"
 import { CharacterList } from './CharacterList'
 
 export const CharacterForm = () => {
 
+    const currentUser = JSON.parse(sessionStorage.getItem("app_user_id"))
+
     const [character, setCharacter] = useState({
         name: "",
         level: 0,
         classId: 0,
-        campaign: ""
+        campaign: "",
+        userId: parseInt(currentUser)
     })
 
 
@@ -46,6 +50,7 @@ useEffect(() => {
         if (classId === 0) {
             window.alert("Please assign a class to your character")
         } else {
+            setIsLoading(true)
             addCharacter(character)
             .then(() => history.push("/"))
         }
@@ -73,8 +78,8 @@ useEffect(() => {
                     <label htmlFor="class">Assign a Class: </label>
                     <select value={character.classId} name="classId" id="classId" onChange={handleControlledInputChange} className="form-control" >
                         <option value="0">Select a Class</option>
-                        {character.map(c => (
-                            <option key={c.id} value={c.id}>
+                        {classes.map(c => (
+                            <option key={c.id} value={c.id} >
                                 {c.name}
                             </option>
                         ))}
@@ -87,7 +92,10 @@ useEffect(() => {
                     <input type="text" id="campaign" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Campaign" value={character.campaign} />
                 </div>
             </fieldset>
-            <button className="btn btn-primary" onClick={handleClickSaveCharacter}>Save Character</button>
+            <Link to={"/"}>
+                <button className="btn-primary">Return</button>
+            </Link>
+            <button disabled={isLoading} className="btn btn-primary" onClick={handleClickSaveCharacter}>Save Character</button>
         </form>
     )
 }
