@@ -21,6 +21,14 @@ export const CharacterView = () => {
                 name: character.name,
                 level: character.level
             })
+            setIsLoading(false)
         })
-    })
+    }, [charId])
+
+    return (
+        <section className="character">
+            <h3 className="character__name">{character.name}</h3>
+            <div className="character__level">{character.level}</div>
+        </section>
+    )
 }
