@@ -52,13 +52,13 @@ export const CharacterView = () => {
 
     return (
         <section className="character">
+            <Link to={`/`}>
+                <button>Return</button>
+            </Link>
            <div> <h3 className="character__name">{character.name}</h3> </div>
             <div className="character__level">Level: {character.level}</div>
             <div className="character__class">Class: {character.class?.name}</div>
             <div className="character__campaign">Campaign: {character.campaign}</div>
-            <Link to={`/`}>
-                <button>Return</button>
-            </Link>
         </section>
     )
 }
