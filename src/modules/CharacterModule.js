@@ -1,8 +1,8 @@
 const remoteURL = "http://localhost:8088"
 
-export const getCharacterById = (charId) => {
-    return fetch(`${remoteURL}/characters/${charId}`)
-    .then(response => response.json())
+export const getCharacterById = (id) => {
+    return fetch(`${remoteURL}/characters/${id}?_expand=class`)
+    .then(res => res.json())
 }
 
 export const getAllCharacters = () => {

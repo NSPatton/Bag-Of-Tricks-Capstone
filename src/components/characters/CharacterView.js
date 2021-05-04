@@ -1,34 +1,64 @@
 import React, {useState, useEffect} from "react";
-import {getCharactersByUser} from "../../modules/CharacterModule"
-import {useParams, useHistory, Link} from "react-router-dom"
+import {getCharacterById} from "../../modules/CharacterModule"
+import {useHistory, Link} from "react-router-dom"
+import {useParams} from "react-router"
+import { getFeatureByCharacterId } from "../../modules/FeatureModule";
+import { getStrategiesByCharacterId } from "../../modules/StrategiesModule";
 
 export const CharacterView = () => {
     const [character, setCharacter] = useState({
         name: "",
-        level: 0
-
+        level: "",
+        classId: 0
     })
+
+    const [feature, setFeature] = useState([])
+
+    const [strategy, setStrategy] = useState([])
 
     const [isLoading, setIsLoading] = useState(true)
     //useParams will look for that specific character Ids information
-    const {charId} = useParams();
+    const {characterId} = useParams();
     const history = useHistory();
 
     useEffect(() => {
-        getCharactersByUser(charId)
+        getCharacterById(characterId)
         .then(character => {
-            setCharacter({
-                name: character.name,
-                level: character.level
-            })
+            setCharacter(
+               character
+            )
             setIsLoading(false)
         })
-    }, [charId])
+    }, [])
+
+    useEffect(() => {
+        getFeatureByCharacterId(characterId)
+        .then(feature => {
+            setFeature(
+                feature
+            )
+        })
+
+    }, [])
+
+    useEffect(() => {
+        getStrategiesByCharacterId(characterId)
+        .then(strategy => {
+            setStrategy(
+                strategy
+            )
+        })
+    }, [])
 
     return (
         <section className="character">
-            <h3 className="character__name">{character.name}</h3>
-            <div className="character__level">{character.level}</div>
+           <div> <h3 className="character__name">{character.name}</h3> </div>
+            <div className="character__level">Level: {character.level}</div>
+            <div className="character__class">Class: {character.class?.name}</div>
+            <div className="character__campaign">Campaign: {character.campaign}</div>
+            <Link to={`/`}>
+                <button>Return</button>
+            </Link>
         </section>
     )
 }
