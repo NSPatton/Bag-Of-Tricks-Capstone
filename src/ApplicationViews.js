@@ -6,6 +6,7 @@ import {CharacterList} from "./components/characters/CharacterList"
 import {CharacterCard} from "./components/characters/CharacterCard"
 import {CharacterForm} from "./components/characters/CharacterForm"
 import {NavBar} from "./components/nav/NavBar"
+import {CharacterView} from "./components/characters/CharacterView"
 
 
 export const ApplicationViews = ({setAuthUser, isAuthenticated}) => {
@@ -20,6 +21,10 @@ export const ApplicationViews = ({setAuthUser, isAuthenticated}) => {
         <Route exact path="/characters/create">
         <NavBar />
             <CharacterForm />
+        </Route>
+        {/* This looks for characters by their id. the colon tells the route that this is dynamic */}
+        <Route exact path="/characters/:characterId(\d+)">
+                <CharacterView />
         </Route>
         <Route exact path="/login">
             <Login setAuthUser={setAuthUser} />
