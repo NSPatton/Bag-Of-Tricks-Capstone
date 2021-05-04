@@ -4,3 +4,4 @@ export const getStrategiesByCharacterId = (characterId) => {
     return fetch(`${remoteURL}/strategies/?characterId=${characterId}`)
     .then(response => response.json())
 }
+
