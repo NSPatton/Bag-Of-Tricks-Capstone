@@ -77,7 +77,7 @@ useEffect(() => {
                 <div className="form-group">
                     <label htmlFor="class">Assign a Class: </label>
                     <select value={character.classId} name="classId" id="classId" onChange={handleControlledInputChange} className="form-control" >
-                        <option value="0">Select a Class</option>
+                        <option value="0">Class</option>
                         {classes.map(c => (
                             <option key={c.id} value={c.id} >
                                 {c.name}

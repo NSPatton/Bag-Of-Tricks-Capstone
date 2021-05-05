@@ -9,6 +9,7 @@ import {NavBar} from "./components/nav/NavBar"
 import {CharacterView} from "./components/characters/CharacterView"
 import { FeatureList } from "./components/features/FeatureList";
 import {StrategiesList} from "./components/strategies/StrategiesList"
+import {FeatureForm} from "./components/features/FeatureForm"
 
 
 export const ApplicationViews = ({setAuthUser, isAuthenticated}) => {
@@ -28,6 +29,9 @@ export const ApplicationViews = ({setAuthUser, isAuthenticated}) => {
         <Route exact path="/characters/:characterId(\d+)">
                 <CharacterView />
                 <FeatureList />
+        </Route>
+        <Route path="characters/features/create/:characterId(\d+)">
+            <FeatureForm />
         </Route>
         <Route exact path="/login">
             <Login setAuthUser={setAuthUser} />
