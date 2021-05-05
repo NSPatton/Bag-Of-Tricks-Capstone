@@ -6,6 +6,7 @@ import { getFeatureByCharacterId } from "../../modules/FeatureModule";
 import { getStrategiesByCharacterId } from "../../modules/StrategiesModule";
 import { CharacterList } from "./CharacterList";
 import {FeatureList} from "../features/FeatureList"
+import {StrategiesList} from "../strategies/StrategiesList"
 
 export const CharacterView = () => {
     const [character, setCharacter] = useState({
@@ -66,7 +67,7 @@ export const CharacterView = () => {
                 {character.id && <FeatureList characterId={character.id} />}
             </section>
             <section className="strategies">
-                {/* {character.id &&<StrategiesList characterId={character.id} />} */}
+                {character.id &&<StrategiesList characterId={character.id} />}
             </section>
         </section>
         </>

@@ -5,3 +5,8 @@ export const getStrategiesByCharacterId = (characterId) => {
     .then(response => response.json())
 }
 
+export const deleteStrategy = (id) => {
+    return fetch(`${remoteURL}/strategies/${id}`, {
+    method: "DELETE"
+    }).then(result => result.json())
+}
