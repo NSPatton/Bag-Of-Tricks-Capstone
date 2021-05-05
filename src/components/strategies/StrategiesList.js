@@ -1,18 +1,20 @@
 import React, {useState, useEffect} from "react"
 import {useHistory} from "react-router-dom"
+import {StrategiesCard} from "./StrategiesCard"
+import {getStrategiesByCharacterId, deleteStrategy} from "../../modules/StrategiesModule"
 
 export const StrategiesList = ({characterId}) => {
 
     const currentUser = JSON.parse(sessionStorage.getItem("app_user_id"))
 
-    const [strategy, setStrategies] = useState([])
+    const [strategies, setStrategies] = useState([])
 
     const [isLoading, setIsLoading] = useState(true)
 
     const history = useHistory()
 
     const getStrategies = () => {
-        return getStrategiesOfCharacterId(currentUser)
+        return getStrategiesByCharacterId(currentUser)
         .then(strategiesFromAPI => {
             setStrategies(strategiesFromAPI)
         })
