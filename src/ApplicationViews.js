@@ -28,9 +28,9 @@ export const ApplicationViews = ({setAuthUser, isAuthenticated}) => {
         {/* This looks for characters by their id. the colon tells the route that this is dynamic */}
         <Route exact path="/characters/:characterId(\d+)">
                 <CharacterView />
-                <FeatureList />
+                {/* <FeatureList /> */}
         </Route>
-        <Route path="characters/features/create/:characterId(\d+)">
+        <Route exact path="/features/create/:characterId(\d+)">
             <FeatureForm />
         </Route>
         <Route exact path="/login">

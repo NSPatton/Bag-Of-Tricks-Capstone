@@ -3,7 +3,7 @@ import {useHistory} from "react-router-dom"
 import {FeatureCard} from "./FeatureCard"
 import {getFeatureByCharacterId, deleteFeature} from '../../modules/FeatureModule'
 
-export const FeatureList = () => {
+export const FeatureList = ({characterId}) => {
 
     const currentUser = JSON.parse(sessionStorage.getItem("app_user_id"))
 
@@ -33,7 +33,7 @@ export const FeatureList = () => {
     return (
         <>
     <section className="section-content">
-        <button type="button" className="btn-primary" onClick={() => {history.push("/features/create")}}>New Feature</button>
+        <button type="button" className="btn-primary" onClick={() => {history.push(`/features/create/${characterId}`)}}>New Feature</button>
     </section>
         <div className="container-cards">
             {features.map(feature => 

@@ -12,7 +12,8 @@ export const FeatureForm = () => {
         name: "",
         level: "",
         desc: "",
-        userId: parseInt(currentUser)
+        userId: parseInt(currentUser),
+        characterId: characterId
     })
 
     const [isLoading, setIsLoading] = useState(false)
@@ -32,18 +33,14 @@ export const FeatureForm = () => {
         setFeatures(newFeature)
     }
 
-    useEffect(() => {
-        getFeatureByCharacterId()
-        .then(featuresFromAPI => {
-            setFeatures(featuresFromAPI)
-        })
-    })
-
     const handleClickSaveFeature = (event) => {
         event.preventDefault()
         setIsLoading(true)
         addFeature(feature)
-        .then(() => history.push(`/characters/${characterId}`))
+        .then((data) => {
+            console.log(data)
+            history.push(`/characters/${characterId}`)
+        })
     }
 
 
