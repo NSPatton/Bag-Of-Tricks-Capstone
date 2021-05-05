@@ -4,6 +4,8 @@ import {useHistory, Link} from "react-router-dom"
 import {useParams} from "react-router"
 import { getFeatureByCharacterId } from "../../modules/FeatureModule";
 import { getStrategiesByCharacterId } from "../../modules/StrategiesModule";
+import { CharacterList } from "./CharacterList";
+import {FeatureList} from "../features/FeatureList"
 
 export const CharacterView = () => {
     const [character, setCharacter] = useState({
@@ -51,6 +53,7 @@ export const CharacterView = () => {
     }, [])
 
     return (
+        <>
         <section className="character">
             <Link to={`/`}>
                 <button>Return</button>
@@ -59,6 +62,13 @@ export const CharacterView = () => {
             <div className="character__level">Level: {character.level}</div>
             <div className="character__class">Class: {character.class?.name}</div>
             <div className="character__campaign">Campaign: {character.campaign}</div>
+            <section className="features">
+                {character.id && <FeatureList characterId={character.id} />}
+            </section>
+            <section className="strategies">
+                {/* {character.id &&<StrategiesList characterId={character.id} />} */}
+            </section>
         </section>
+        </>
     )
 }
