@@ -10,3 +10,13 @@ export const deleteStrategy = (id) => {
     method: "DELETE"
     }).then(result => result.json())
 }
+
+export const addStrategy = (newStrategy) => {
+    return fetch(`${remoteURL}/strategies`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(newStrategy)
+    }).then(response => response.json())
+}

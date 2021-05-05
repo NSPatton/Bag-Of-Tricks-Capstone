@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {useHistory, useParams} from 'react-router'
 import {Link} from "react-router-dom"
-import {addFeature, getFeatureByCharacterId} from "../../modules/FeatureModule"
+import {addFeature} from "../../modules/FeatureModule"
 
 
 export const FeatureForm = () => {
