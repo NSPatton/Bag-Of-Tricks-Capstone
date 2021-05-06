@@ -8,6 +8,11 @@ export const StrategiesCard = ({strategy, handleDeleteStrategy}) => {
                 <div className="strategies">
                     <div className="strategy">
                         <h4>Strategy: {strategy.desc}</h4>
+                        <Link to={`/strategies/${strategy.id}`}>
+                            <button type="button">
+                                Edit
+                            </button>
+                        </Link>
                         <button className="btn-primary" type="button" onClick={() => handleDeleteStrategy(strategy.id)}>Delete</button>
                     </div>
                 </div>

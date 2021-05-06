@@ -20,3 +20,18 @@ export const addStrategy = (newStrategy) => {
         body: JSON.stringify(newStrategy)
     }).then(response => response.json())
 }
+
+export const getStrategyById = (id) => {
+    return fetch(`${remoteURL}/strategies/${id}`)
+    .then(res => res.json())
+}
+
+export const updateStrategy = (editedStrategy) => {
+    return fetch(`${remoteURL}/strategies/${editedStrategy.id}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body:JSON.stringify(editedStrategy)
+    }).then(data => data.json())
+}
