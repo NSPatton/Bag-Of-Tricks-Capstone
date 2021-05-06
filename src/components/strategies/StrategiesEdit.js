@@ -1,10 +1,8 @@
 import React, {useState, useEffect} from "react"
-import {useHistory, useParams, Link} from "react-router-dom"
+import {useHistory, useParams} from "react-router-dom"
 import {updateStrategy, getStrategyById} from "../../modules/StrategiesModule"
 
 export const StrategiesEdit = () => {
-
-    // const currentUser = JSON.parse(sessionStorage.getItem("app_user_id"))
 
     const [strategy, setStrategy] = useState({
         id: 0,
