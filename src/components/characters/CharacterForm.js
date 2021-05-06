@@ -1,9 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import {useHistory} from 'react-router'
 import {Link} from "react-router-dom"
-import {addCharacter, getAllCharacters} from '../../modules/CharacterModule'
+import {addCharacter} from '../../modules/CharacterModule'
 import {getAllClasses} from "../../modules/ClassModule"
-import { CharacterList } from './CharacterList'
 
 export const CharacterForm = () => {
 
