@@ -2,7 +2,7 @@ import React from "react"
 import "./CharacterCard.css"
 import {Link} from "react-router-dom"
 
-export const CharacterCard = ({character, handleDeleteCharacter}) => {
+export const CharacterCard = ({character, handleDeleteCharacter, handleUpdateCharacter}) => {
     return (
             <div className="cards">
                 <div className="card-content">
@@ -14,6 +14,9 @@ export const CharacterCard = ({character, handleDeleteCharacter}) => {
                         <p>Campaign: {character.campaign}</p>
                         <Link to={`/characters/${character.id}`}>
                             <button>View</button>
+                        </Link>
+                        <Link to={`/characters/${character.id}/edit`}>
+                            <button type="button" className="btn-primary">Edit</button>
                         </Link>
                         <button className="btn-primary" type="button" onClick={() => handleDeleteCharacter(character.id)}>Delete</button>
                     </div>

@@ -39,7 +39,10 @@ export const StrategiesForm = () => {
     }
 
     return (
-        <form className="featureForm">
+        <form className="strategiesForm">
+             <Link to="/">
+                <button className="btn-primary">Return</button>
+            </Link>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="desc">Description: </label>
