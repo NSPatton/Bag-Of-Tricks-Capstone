@@ -4,6 +4,7 @@ import {FeatureCard} from "./FeatureCard"
 import {getFeatureByCharacterId, deleteFeature} from '../../modules/FeatureModule'
 
 export const FeatureList = ({characterId}) => {
+    console.log(characterId)
 
     const currentUser = JSON.parse(sessionStorage.getItem("app_user_id"))
 
@@ -14,7 +15,7 @@ export const FeatureList = ({characterId}) => {
     const history = useHistory()
 
     const getFeatures = () => {
-        return getFeatureByCharacterId(currentUser).then(featuresFromAPI => {
+        return getFeatureByCharacterId(characterId).then(featuresFromAPI => {
             setFeatures(featuresFromAPI)
         })
     }

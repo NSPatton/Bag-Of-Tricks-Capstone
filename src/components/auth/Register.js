@@ -3,7 +3,7 @@ import { useHistory, Link } from "react-router-dom"
 import { authApi, userStorageKey } from "./authSettings"
 import "./Login.css"
 
-export const Register = (setAuthUser) => {
+export const Register = ({setAuthUser}) => {
 
     const [registerUser, setRegisterUser] = useState({ firstName: "", lastName: "", email: "" })
     const [conflictDialog, setConflictDialog] = useState(false)

@@ -14,7 +14,7 @@ export const StrategiesList = ({characterId}) => {
     const history = useHistory()
 
     const getStrategies = () => {
-        return getStrategiesByCharacterId(currentUser)
+        return getStrategiesByCharacterId(characterId)
         .then(strategiesFromAPI => {
             setStrategies(strategiesFromAPI)
         })

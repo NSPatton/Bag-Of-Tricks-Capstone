@@ -39,7 +39,7 @@ export const FeatureForm = () => {
         addFeature(feature)
         .then((data) => {
             console.log(data)
-            history.push(`/characters/${characterId}`)
+            history.push(`/characters/${feature.characterId}`)
         })
     }
 
