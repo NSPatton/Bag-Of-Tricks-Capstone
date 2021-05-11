@@ -11,6 +11,9 @@ export const NavBar = () => {
             <li className="navbar__item active">
                 <Link className="navbar__link" to="/characters/create">Add A Character</Link>
             </li>
+            <li className="navbar__item active">
+                <Link className="navbar__link" onClick={() => sessionStorage.clear()} to="/login">Logout</Link>
+            </li>
         </ul>
     )
 }

@@ -11,7 +11,7 @@ export const StrategiesForm = () => {
     const [strategy, setStrategies] = useState({
         desc: "",
         userId: parseInt(currentUser),
-        characterId: characterId
+        characterId: parseInt(characterId)
     })
 
     const [isLoading, setIsLoading] = useState(false)

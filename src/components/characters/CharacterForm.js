@@ -10,7 +10,7 @@ export const CharacterForm = () => {
 
     const [character, setCharacter] = useState({
         name: "",
-        level: 0,
+        level: "",
         classId: 0,
         campaign: "",
         userId: parseInt(currentUser)
@@ -26,7 +26,7 @@ const history = useHistory();
 const handleControlledInputChange = (event) => {
     const newCharacter = {...character}
     let selectedVal = event.target.value
-    if (event.target.id.includes("Id")) {
+    if (event.target.id.includes("Id") || event.target.id === "level") {
         selectedVal = parseInt(selectedVal)
     }
 
@@ -69,7 +69,7 @@ useEffect(() => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="level">Level: </label>
-                    <input type="text" id="level" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Character level" value={character.level} />
+                    <input type="number" id="level" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Character level" value={character.level} />
                 </div>
             </fieldset>
             <fieldset>
