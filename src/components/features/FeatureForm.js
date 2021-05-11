@@ -13,8 +13,10 @@ export const FeatureForm = () => {
         level: "",
         desc: "",
         userId: parseInt(currentUser),
-        characterId: characterId
+        characterId: parseInt(characterId)
     })
+
+    
 
     const [isLoading, setIsLoading] = useState(false)
 
@@ -25,7 +27,7 @@ export const FeatureForm = () => {
     const handleControlledInputChange = (event) => {
         const newFeature = {...feature}
         let selectedVal = event.target.value
-        if (event.target.id.includes("Id")) {
+        if (event.target.id.includes("Id") || event.target.id === "level") {
             selectedVal = parseInt(selectedVal)
         }
     
@@ -59,7 +61,7 @@ export const FeatureForm = () => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="level">Level: </label>
-                    <input type="text" id="level" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Feature level" value={feature.level} />
+                    <input type="number" id="level" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Feature level" value={feature.level} />
                 </div>
             </fieldset>
             <fieldset>
