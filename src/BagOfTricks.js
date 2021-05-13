@@ -1,5 +1,4 @@
 import React, {useState} from "react"
-import {Route, Redirect} from "react-router-dom"
 import {ApplicationViews} from "./ApplicationViews"
 
 
@@ -7,6 +6,7 @@ import {ApplicationViews} from "./ApplicationViews"
 //if not, direct them to login/register
 export const BagOfTricks = () => {
     const [isAuthenticated, setIsAuthenticated] = useState(sessionStorage.getItem("app_user_id") !== null)
+
     
     const setAuthUser = (user) => {
         sessionStorage.setItem("app_user_id", JSON.stringify(user.id))

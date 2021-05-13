@@ -22,7 +22,6 @@ export const ApplicationViews = ({setAuthUser, isAuthenticated}) => {
              : <Redirect to="/login" />} 
         </Route>
         <Route exact path="/characters/create">
-            <NavBar />
             <CharacterForm />
         </Route>
         {/* This looks for characters by their id. the colon tells the route that this is dynamic */}
