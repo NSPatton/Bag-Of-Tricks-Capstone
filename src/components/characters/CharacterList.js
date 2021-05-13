@@ -28,13 +28,6 @@ export const CharacterList = () => {
 
     return (
         <>
-        <section className="section-content">
-            <button type="button"
-            className="btn-primary"
-            onClick={() => {history.push("/characters/create") }}>
-                Add A Character
-            </button>
-        </section>
         <div className="container-cards">
             {characters.map(character =>
                 <CharacterCard key={character.id} character={character} handleDeleteCharacter={handleDeleteCharacter} /> )}
