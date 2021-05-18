@@ -33,7 +33,7 @@ export const StrategiesList = ({characterId}) => {
     return (
         <>
         <section className="section-content">
-            <button type="button" className="btn-primary" onClick={() => {history.push(`/strategies/create/${characterId}`)}}>Add A Strategy</button>
+            <button type="button" className="btn-primary-strategies" onClick={() => {history.push(`/strategies/create/${characterId}`)}}>Add A Strategy</button>
         </section>
         <div className="container-cards">
             {strategies.map(strategy =>

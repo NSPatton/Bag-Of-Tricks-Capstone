@@ -34,7 +34,7 @@ export const FeatureList = ({characterId}) => {
     return (
         <>
     <section className="section-content">
-        <button type="button" className="btn-primary" onClick={() => {history.push(`/features/create/${characterId}`)}}>New Feature</button>
+        <button type="button" className="btn-primary-feature" onClick={() => {history.push(`/features/create/${characterId}`)}}>New Feature</button>
     </section>
         <div className="container-cards">
             {features.map(feature => 

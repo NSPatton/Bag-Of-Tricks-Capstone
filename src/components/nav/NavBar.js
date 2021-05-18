@@ -23,6 +23,7 @@ export const NavBar = () => {
                 </div>
             </div>
             <div className="logout">
+            <i class="bi bi-person-circle"></i>
                 <li className="navbar__item active">
                     <Link className="navbar__link" onClick={() => sessionStorage.clear()} to="/login">Logout</Link>
                 </li>

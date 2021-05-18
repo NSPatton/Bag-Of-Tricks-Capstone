@@ -18,12 +18,12 @@
    justify-content: flex-end;
 }
 
-.inner_nav {
+div.inner_nav {
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
     align-self: center;
-    margin-left: 500px;
+    margin-left: 600px;
 }
 
 .my_characters {
@@ -57,7 +57,7 @@ img {
 }
 
 .navbar__link2:hover {
-    color: red
+    color: #FF4E62
 }
 
 .navbar__link1 {
@@ -71,5 +71,9 @@ img {
 }
 
 .navbar__link1:hover {
-    color: red
+    color: #FF4E62
+}
+
+body {
+    background-color:  #F9F3DE;
 }

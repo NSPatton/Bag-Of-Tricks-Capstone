@@ -19,11 +19,11 @@ export const CharacterCard = ({ character, handleDeleteCharacter, handleUpdateCh
                         </div>
                         <div className="editbutton">
                             <Link to={`/characters/${character.id}/edit`}>
-                                <button type="button" className="btn-primary">Edit</button>
+                                <button type="button" className="btn-primary-edit">Edit</button>
                             </Link>
                         </div>
                         <div className="deletebutton">
-                            <button className="btn-primary" type="button" onClick={() => handleDeleteCharacter(character.id)}>Delete</button>
+                        <i class="bi bi-trash-fill" onClick={() => handleDeleteCharacter(character.id)}></i>
                         </div>
                     </div>
                 </div>

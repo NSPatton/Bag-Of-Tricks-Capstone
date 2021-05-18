@@ -48,9 +48,6 @@ export const FeatureForm = () => {
 
     return (
         <form className="featureForm">
-            <Link to="/">
-                <button className="btn-primary">Return</button>
-            </Link>
             <h2 className="featureForm_title">New Feature</h2>
             <fieldset>
                 <div className="form-group">
@@ -70,7 +67,10 @@ export const FeatureForm = () => {
                     <input type="text" id="desc" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Description" value={feature.desc} />
                 </div>
             </fieldset>
-            <button disabled={isLoading} className="btn btn-primary" onClick={handleClickSaveFeature}>Save Feature</button>
+            <button disabled={isLoading} className="btn-primary-buttons" onClick={handleClickSaveFeature}>Save Feature</button>
+            <Link to="/">
+                <button className="btn-primary-button">Return</button>
+            </Link>
         </form>
     )
     
