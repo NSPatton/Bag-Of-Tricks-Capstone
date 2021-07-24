@@ -1,4 +1,4 @@
-#Bag of Tricks
+Bag of Tricks
 -----
 A Dungeons and Dragons character tracking app where a user can catalogue strategies
 
