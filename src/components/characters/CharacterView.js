@@ -56,17 +56,20 @@ export const CharacterView = () => {
     return (
         <>
         <section className="character">
-           <div> <h3 className="character__name">{character.name}</h3> </div>
+           <div> <h2 className="character__name">{character.name}</h2> </div>
             <div className="character__level">Level: {character.level}</div>
             <div className="character__class">Class: {character.class?.name}</div>
             <div className="character__campaign">Campaign: {character.campaign}</div>
+        </section>
+            {/* This ternary will display lists based on the current character id */}
+            <div className="feature_list">
             <section className="features">
                 {character.id && <FeatureList characterId={character.id} />}
             </section>
             <section className="strategies">
                 {character.id &&<StrategiesList characterId={character.id} />}
             </section>
-        </section>
+            </div>
         </>
     )
 }

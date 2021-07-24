@@ -3,6 +3,7 @@ import {useHistory} from 'react-router'
 import {Link} from "react-router-dom"
 import {addCharacter} from '../../modules/CharacterModule'
 import {getAllClasses} from "../../modules/ClassModule"
+import "./CharacterForm.css"
 
 export const CharacterForm = () => {
 
@@ -92,9 +93,9 @@ useEffect(() => {
                 </div>
             </fieldset>
             <Link to={"/"}>
-                <button className="btn-primary">Return</button>
+                <button className="btn-primary-buttons">Return</button>
             </Link>
-            <button disabled={isLoading} className="btn btn-primary" onClick={handleClickSaveCharacter}>Save Character</button>
+            <button disabled={isLoading} className="btn-primary-button" onClick={handleClickSaveCharacter}>Save Character</button>
         </form>
     )
 }

@@ -1,0 +1,35 @@
+.cards {
+    border: 2px solid black;
+    width: 75%;
+    padding: 1em;
+    /* margin:auto; */
+    margin-bottom: 1em;
+    border-radius: 10px;
+    background-color: white;
+}
+
+div.container-cards {
+    padding-left: 200px;
+}
+
+section.features {
+    float: left;
+    width: 50%;
+}
+
+section.strategies {
+    float: right;
+    width: 50%;
+}
+
+button.btn-primary-feature {
+    margin-left: 475px;
+}
+
+button.btn-primary-strategies {
+    margin-left: 475px;
+}
+
+section.character {
+    margin-left: 900px;
+}

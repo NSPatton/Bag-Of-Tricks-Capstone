@@ -40,16 +40,16 @@ export const StrategiesForm = () => {
 
     return (
         <form className="strategiesForm">
-             <Link to="/">
-                <button className="btn-primary">Return</button>
-            </Link>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="desc">Description: </label>
                     <input type="text" id="desc" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Description" value={strategy.desc} />
                 </div>
             </fieldset>
-            <button disabled={isLoading} className="btn btn-primary" onClick={handleClickSaveStrategy}>Save Strategy</button>
+            <button disabled={isLoading} className="btn-primary-buttons" onClick={handleClickSaveStrategy}>Save Strategy</button>
+             <Link to="/">
+                <button className="btn-primary">Return</button>
+            </Link>
         </form>
     )
 }

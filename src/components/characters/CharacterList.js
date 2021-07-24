@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import {useHistory} from "react-router-dom";
 import {CharacterCard} from "./CharacterCard";
 import {updateCharacter, deleteCharacter, getCharactersByUser} from "../../modules/CharacterModule"
+import "./CharacterCard.css"
 
 export const CharacterList = () => {
 //We're getting the current user stored in session storage. Check current user in session storage in application in dev tools
@@ -28,13 +29,6 @@ export const CharacterList = () => {
 
     return (
         <>
-        <section className="section-content">
-            <button type="button"
-            className="btn-primary"
-            onClick={() => {history.push("/characters/create") }}>
-                Add A Character
-            </button>
-        </section>
         <div className="container-cards">
             {characters.map(character =>
                 <CharacterCard key={character.id} character={character} handleDeleteCharacter={handleDeleteCharacter} /> )}
